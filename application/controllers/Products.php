@@ -2,24 +2,31 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
-		$this->load->view('products');
+		$this->load->model("Brand_model");
+		$data['brands']		= $this->Brand_model->getShownBrands();
+
+		$this->load->model("Type_model");
+		$data['types']		= $this->Type_model->getTypes();
+
+		$this->load->view('products', $data);
+	}
+
+	public function Brand($EncodedBrandName)
+	{
+		$brandName = urldecode($EncodedBrandName);
+		$this->load->model("Brand_model");
+		$brand		= $this->Brand_model->getByName($brandName);
+		if($brand == NULL)
+		{
+			$this->load->view('product/ProductHeader');
+			$this->load->view('product/emptyType');
+			$this->load->view('product/ProductFooter');
+		} else {
+			$this->load->view('product/ProductHeader');
+			$this->load->view('product/emptyType');
+			$this->load->view('product/ProductFooter');
+		}
 	}
 }

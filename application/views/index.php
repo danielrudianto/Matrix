@@ -282,7 +282,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="row">
           <div class="footer__copy">
-            <h6>&copy; <a href='https://xunny.id'>Xunny.id</a></h6>
+            <h6>&copy; <a href='https://xunny.id' rel='dofollow' target='_blank'>Xunny.id</a></h6>
           </div>
         </div>
       </div>
