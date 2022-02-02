@@ -53,7 +53,7 @@
 			<div class='col-12 text-end'>
 				<nav aria-label="Pagination">
 					<ul class="pagination pagination-lg">
-						<?php for($i = 1; $i <= $pages; $i++){ ?>
+						<?php if($pages > 1){ for($i = 1; $i <= $pages; $i++){ ?>
 						<li 
 							id='page-item-<?= $i ?>'
 							class="page-item" 
@@ -62,7 +62,7 @@
 								style='font-size:1.8rem'
 								class="page-link"><?= $i ?></a>
 						</li>
-						<?php } ?>
+						<?php }} ?>
 					</ul>
 				</nav>
 			</div>

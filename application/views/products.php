@@ -45,30 +45,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </header>
 	<section class='hero'>
 		<div class='hero__wrapper'>
-			<div class="container">
-                <h2 class="section-heading color-black">Selamat datang di <br><i>Online Catalogue</i> Toko Matrix</h2>
-                <div class='row justify-content-center'>
-                    <div class='col-12 text-center'>
-                        <p class='paragraph'>Pada aplikasi ini, kami dapat membantu anda untuk memilih produk sesuai kebutuhan anda. Untuk memudahkan anda untuk memiliih produk, kami telah mengklasifikasikan produk - produk andalan kami ke dalam beberapa <em>filter</em> yaitu <strong>merek</strong>, dan <strong>jenis barang</strong>.</p>
-                    </div>
-                    <div class='col-lg-4 col-md-6 col-sm-8 col-12 mt-5'>
-                        <div class="input-group mb-3">
-                            <input 
-                                type="text" 
-                                class="form-control p-3" 
-                                placeholder="Cari Produk" 
-                                aria-label="Cari Produk" 
-                                aria-describedby="button-addon2"
-                                style='font-size:1.6rem'>
-                        <button 
-                            class="btn btn-outline-secondary px-5" 
-                            type="button" 
-                            id="button-addon2"
-                            style='font-size:1.6rem'>Cari</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<div class="container">     
+          <div class='row justify-content-center'>
+              <div class='col-12 text-center'>
+              <h2 class="section-heading color-black w-100">Selamat datang di <br><i>Online Catalogue</i> Toko Matrix</h2>
+                  <p class='paragraph'>Pada aplikasi ini, kami dapat membantu anda untuk memilih produk sesuai kebutuhan anda. Untuk memudahkan anda untuk memiliih produk, kami telah mengklasifikasikan produk - produk andalan kami ke dalam beberapa <em>filter</em> yaitu <strong>merek</strong>, dan <strong>jenis barang</strong>.</p>
+              </div>
+              <div class='col-lg-4 col-md-6 col-sm-8 col-12 mt-5'>
+                  <div class="input-group mb-3">
+                      <input 
+                          type="text" 
+                          class="form-control p-3" 
+                          placeholder="Cari Produk" 
+                          aria-label="Cari Produk" 
+                          aria-describedby="button-addon2"
+                          style='font-size:1.6rem'>
+                  <button 
+                      class="btn btn-outline-secondary px-5" 
+                      type="button" 
+                      id="button-addon2"
+                      style='font-size:1.6rem'>Cari</button>
+                  </div>
+              </div>
+          </div>
+      </div>
 		</div>
 	</section>
 	<section class='growth mt-5'>
@@ -83,7 +83,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php foreach($brands as $brand){ ?>
 					<div class='col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch mb-3'>
 						<div class='card w-100'>
-							<img class="card-img-top" src="<?= base_url('assets/images/brands/') . $brand->id ?>.png" alt="<?= $brand->name ?>">
+							<img 
+                class="card-img-top" 
+                src="<?= base_url('assets/images/brands/') . $brand->id ?>.png" 
+                alt="<?= $brand->name ?>"
+                title='<?= $brand->name ?> brand image'>
 							<div class="card-body p-5 text-center">
 								<h3 class="h2 card-title"><?= $brand->name ?></h3>
 								<br>

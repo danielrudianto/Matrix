@@ -208,9 +208,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!--client section start-->
   <section class="clients-sec" id="feedback">
     <div class="container">
-      <h2 class="section-heading color-black"></h2>
-      
-      
+      <div class='row'>
+        <div class='col-12'>
+          <h2 class="section-heading color-black">Terpercaya dan Terlengkap</h2>
+          <p class='h2 text-center'>Toko Matrix telah dipercaya lebih dari 10 tahun dan telah melayani lebih dari 1.000 pengguna selama berkarier. Berkomitmen untuk menyediakan hanya dan hanya produk dan pelayanan terbaik untuk anda, kami terus mengembangkan sistem pelayanan serta kelengkapan produk kami.</p>
+          <br>
+
+          <p class='h2 text-center'>Telusuri produk kami saat ini di <a href='<?= site_url('Products') ?>'>Product Catalogue</a> kami.</p>
+          <br>
+          <div class='text-center'>
+            <button class='button'>Download Flyer</button>
+          </div>
+          
+        </div>
+      </div>
     </div>
   </section>
   <!--client section end-->
