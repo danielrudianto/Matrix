@@ -16,9 +16,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="manifest" href="<?= base_url('assets/favicon/site.webmanifest') ?>">
 
 	<!-- Styling  -->
-  <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+  	<link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 
-	<title>Toko Matrix | Produk</title>
+	<!-- Scripting -->
+	<script src="<?= base_url('assets/js/jquery.min.js') ?>"></script>
+	<script src="<?= base_url('assets/js/ytdefer.min.js') ?>"></script>
+	<script src="<?= base_url("assets/js/script.js") ?>"></script>
+
+	<title>Toko Matrix | Merek | <?= $title ?></title>
+	<meta name='description' content='<?= $description ?>'>
+	<link rel='canonical' href='<?= current_url(); ?>'>
+	<meta name='author' content='Xunny.id'>
+	<meta name='publisher' content='Xunny.id'>
+
+	<style>
+		.loader {
+			border: 16px solid #f3f3f3;
+			border-top: 16px solid #3498db;
+			border-radius: 50%;
+			width: 120px;
+			height: 120px;
+			animation: spin 2s linear infinite;
+			margin-left:50%;
+			margin-right:50%;
+			position:relative;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+	</style>
 </head>
 <div class="preloader">
   <img src="<?= base_url('assets/images/loading-logo.png') ?>" alt="Logo Toko Matrix" title='Logo Toko Matrix'>

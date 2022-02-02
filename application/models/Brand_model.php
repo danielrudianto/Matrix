@@ -16,6 +16,20 @@ class Brand_model extends CI_Model {
 		return $result;
 	}
 
+	public function getTop()
+	{
+		$query			= $this->db->query("
+			SELECT brand.id, brand.name
+			FROM brand
+			WHERE brand.is_shown = 1
+			ORDER BY brand.name ASC
+			LIMIT 5
+		");
+
+		$result			= $query->result();
+		return $result;
+	}
+
 	public function getByName($brandName)
 	{
 		$this->db->where('name', $brandName);
