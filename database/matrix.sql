@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2022 at 02:19 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.4.20
+-- Generation Time: Feb 02, 2022 at 04:50 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,8 @@ INSERT INTO `brand` (`id`, `name`, `description`, `is_shown`) VALUES
 (3, 'Broco', 'Broco adalah merek terkenal asal Indonesia dengan pengalaman hampir 40 tahun. Sejak didirikan, Broco telah membuktikan menjadi pionir dan pemimpin pasar dalam memanufaktur produk produk elektrikal bermutu tinggi.', 1),
 (4, 'Schneider Electric', 'Schneider Electric, perusahaan manufaktur internasional dengan produk komponen elektrikal asal Perancis, Eropa yang telah berdiri sejak 1836 menawarkan beragam produk elektrikal dengan kualitas yang sudah dijamin.', 1),
 (5, 'Boss', 'Boss merupakan merek untuk keperluan PVC elektrikal seperti socket, pipa conduit, dan flexible asal Australia. Dengan pengalaman sejak 1980, Boss telah berkembang menjadi salah satu merek PVC elektrikal yang mendominasi pasar di Indonesia.', 1),
-(6, 'Panasonic', 'Panasonic merupakan merek elektronik internasional yang mendominasi pasar perlengkapan rumah tangga dan konsumen. Toko Matrix menyediakan perlengkapan saklar, stopkontak, kipas angin, serta exhaust fan merek Pannasonic.', 1);
+(6, 'Panasonic', 'Panasonic merupakan merek elektronik internasional yang mendominasi pasar perlengkapan rumah tangga dan konsumen. Toko Matrix menyediakan perlengkapan saklar, stopkontak, kipas angin, serta exhaust fan merek Pannasonic.', 1),
+(7, 'Supreme Cable', 'Supreme Cable merupakan salah satu manufaktur kabel listrik tertua di Indonesia. Dengan pengalaman lebih dari 50 tahun, kabel Supreme memiliki spesialisasi dalam pembuatan kabel listrik tegangan rendah (low voltage), tegangan menengah (medium voltage), dan tegangan tinggi (high voltage) untuk banyak industri lain.', 1);
 
 -- --------------------------------------------------------
 
@@ -68,8 +69,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `alias`, `description`, `created_at`, `is_delete`, `brand_id`, `type_id`) VALUES
-(1, 'B9020', 'Conduit 20mm', 'Seluruh produk PVC Rigid Boss dimanufaktur sesuai dengan standar British Standard BSEN 61386 - 21:2004/ IEC 61386-21:2002. Kualitas tinggi, Polyviny Chloride high impact digunakan dalam manufaktur conduit dan perlengkapan Boss.', '2022-02-01', 0, 5, 6),
-(2, 'B9020CM', 'Corrugated Conduit 20mm', 'Seluruh produk PVC Rigid Boss dimanufaktur sesuai dengan standar British Standard BSEN 61386 - 21:2004/ IEC 61386-21:2002. Kualitas tinggi, Polyviny Chloride high impact digunakan dalam manufaktur conduit dan perlengkapan Boss.', '2022-02-01', 0, 5, 6),
+(1, 'B9020', '', 'Pipa conduit 20mm', '2022-02-01', 0, 5, 6),
+(2, 'B9020CM', '', 'Pipa conduit corrugated 20mm', '2022-02-01', 0, 5, 6),
 (100, '6611', '', 'Single switch 6A 250V for flush mounting, cream', '2022-02-01', 0, 3, 1),
 (101, '6612', '', 'Double switch 6A 250V for flush mounting, cream', '2022-02-01', 0, 3, 1),
 (102, '6613', '', 'Triple switch 6A 250V for flush mounting, cream', '2022-02-01', 0, 3, 1),
@@ -287,9 +288,9 @@ INSERT INTO `product` (`id`, `name`, `alias`, `description`, `created_at`, `is_d
 (314, 'XA2EA31', '', 'Push button Harmony XA2 diameter 22mm IP54 1N/O hijau Schneider', '2022-02-01', 0, 4, 4),
 (315, 'LC1E1801M7', '', 'Kontaktor TesysE 3P 18A 1N/C 220VAC Schneider', '2022-02-01', 0, 4, 4),
 (316, 'XA2AA42', '', 'Push button Harmony XA2 diameter 22mm IP54 1N/C merah Schneider', '2022-02-01', 0, 4, 4),
-(317, 'XA2AA51', '', 'Push button Harmony XA2 diameter 22mm IP54 1N/O jingga Schneider', '2022-02-01', 0, 4, 4),
+(317, 'XA2EA51', '', 'Push button Harmony XA2 diameter 22mm IP54 1N/O jingga Schneider', '2022-02-01', 0, 4, 4),
 (318, 'LC1E2510M7', '', 'Kontaktor TesysE 3P 25A 1N/O 220VAC  Schneider', '2022-02-01', 0, 4, 4),
-(319, 'XA2AA61', '', 'Push button Harmony XA2 diameter 22mm IP54 1N/O biru Schneider', '2022-02-01', 0, 4, 4),
+(319, 'XA2EA61', '', 'Push button Harmony XA2 diameter 22mm IP54 1N/O biru Schneider', '2022-02-01', 0, 4, 4),
 (320, 'LC1E2501M7', '', 'Kontaktor TesysE 3P 25A 1N/C 220VAC Schneider', '2022-02-01', 0, 4, 4),
 (321, 'LC1E3210M7', '', 'Kontaktor TesysE 3P 32A 1N/O 220VAC Schneider', '2022-02-01', 0, 4, 4),
 (322, 'XA2EVM1LC', '', 'Pilot lamp Harmony XA2 diameter 22mm IP40 220VAC putih Schneider', '2022-02-01', 0, 4, 4),
@@ -321,7 +322,30 @@ INSERT INTO `product` (`id`, `name`, `alias`, `description`, `created_at`, `is_d
 (348, 'XB5AVM3', '', 'Push button Harmony XB5 diameter 22mm IP66 230 - 240VAC hijau Schneider', '2022-02-01', 0, 4, 4),
 (349, 'XB5AVM4', '', 'Push button Harmony XB5 diameter 22mm IP66 230 - 240VAC merah Schneider', '2022-02-01', 0, 4, 4),
 (350, 'XB5AVM5', '', 'Push button Harmony XB5 diameter 22mm IP66 230 - 240VAC jingga Schneider', '2022-02-01', 0, 4, 4),
-(351, 'XB5AVM6', '', 'Push button Harmony XB5 diameter 22mm IP66 230 - 240VAC biru  Schneider', '2022-02-01', 0, 4, 4);
+(351, 'XB5AVM6', '', 'Push button Harmony XB5 diameter 22mm IP66 230 - 240VAC biru  Schneider', '2022-02-01', 0, 4, 4),
+(354, 'B240/20/1', '', 'Junction Box 1 way', '2022-02-01', 0, 5, 6),
+(355, 'B240/20/2', '', 'Junction Box 2 way', '2022-02-02', 0, 5, 6),
+(356, 'B240/20/2A', '', 'Junction Box 2 way angle', '2022-02-02', 0, 5, 6),
+(357, 'B240/20/3', '', 'Junction Box 3 way', '2022-02-02', 0, 5, 6),
+(358, 'B240/20/4', '', 'Junction Box 4 way', '2022-02-02', 0, 5, 6),
+(359, 'B247/20', '', '90 degree bend', '2022-02-02', 0, 5, 6),
+(360, 'B242/20', '', 'Joining coupling', '2022-02-02', 0, 5, 6),
+(361, 'B729C20', '', 'Glands', '2022-02-02', 0, 5, 6),
+(362, 'B261/20', '', 'Saddle', '2022-02-02', 0, 5, 6),
+(363, 'Kabel NYYHY Extrana', '', 'Kabel NYYHY merupakan kabel serabut dilapisi oleh PVC (hitam) dengan core lebih dari 1. Kabel NYYHY Extrana sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 1, 7),
+(364, 'Kabel NYMHY Extrana', '', 'Kabel NYMHY merupakan kabel serabut dilapisi oleh PVC (putih) dengan core lebih dari 1. Kabel NYMHY Extrana sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 1, 7),
+(365, 'Kabel NYM Extrana', '', 'Kabel NYM Extrana merupakan kabel tunggal dilapisi dengan PVC (putih) dengan core lebih dari 1. Kabel NYM Extrana telah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 1, 7),
+(366, 'Kabel NYY Extrana', '', 'Kabel NYY Extrana merupakan kabel tunggal dilapisi dengan PVC (hitam) dengan core lebih dari 1. Kabel NYM Extrana telah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 1, 7),
+(367, 'Kabel NFA2X Extrana', '', 'Kabel NFA2X atau lebih dikenal dengan kabel udara merupakan kabel aluminimum yang diperuntukan sebaga kabel di udara. Kabel NFA2X Extrana sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-01', 0, 1, 7),
+(368, 'Kabel NYA Extrana', '', 'Kabel NYA merupakan kabel tunggal yang tidak dilapisi oleh tambahan PVC luar. Kabel NYA Extrana tersedia dalam warna hitam, merah, biru, dan kuning-hijau. Kabel NYA Extrana sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 1, 7),
+(369, 'Kabel NYAF Extrana', '', 'Kabel NYAF merupakan kabel serabut yang tidak dilapisi oleh tambahan PVC luar. Kabel NYAF Extrana tersedia dalam warna hitam, merah, biru, dan kuning-hijau. Kabel NYAF Extrana sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 1, 7),
+(370, 'Kabel NYYHY Supreme', '', 'Kabel NYYHY merupakan kabel serabut dilapisi oleh PVC (hitam) dengan core lebih dari 1. Kabel NYYHY Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 7, 7),
+(371, 'Kabel NYMHY Supreme', '', 'Kabel NYMHY merupakan kabel serabut dilapisi oleh PVC (putih) dengan core lebih dari 1. Kabel NYMHY Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 7, 7),
+(372, 'Kabel NYM Supreme', '', 'Kabel NYM Supreme merupakan kabel tunggal dilapisi dengan PVC (putih) dengan core lebih dari 1. Kabel NYM Supreme telah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 7, 7),
+(373, 'Kabel NYY Supreme', '', 'Kabel NYY Supreme merupakan kabel tunggal dilapisi dengan PVC (hitam) dengan core lebih dari 1. Kabel NYM Supreme telah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 7, 7),
+(374, 'Kabel NFA2X Supreme', '', 'Kabel NFA2X atau lebih dikenal dengan kabel udara merupakan kabel aluminimum yang diperuntukan sebaga kabel di udara. Kabel NFA2X Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-01', 0, 7, 7),
+(375, 'Kabel NYA Supreme', '', 'Kabel NYA merupakan kabel tunggal yang tidak dilapisi oleh tambahan PVC luar. Kabel NYA Supreme tersedia dalam warna hitam, merah, biru, dan kuning-hijau. Kabel NYA Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 7, 7),
+(376, 'Kabel NYAF Supreme', '', 'Kabel NYAF merupakan kabel serabut yang tidak dilapisi oleh tambahan PVC luar. Kabel NYAF Supreme tersedia dalam warna hitam, merah, biru, dan kuning-hijau. Kabel NYAF Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 7, 7);
 
 -- --------------------------------------------------------
 
@@ -379,13 +403,13 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=352;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=377;
 
 --
 -- AUTO_INCREMENT for table `type`
