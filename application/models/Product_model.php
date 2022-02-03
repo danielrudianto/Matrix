@@ -19,6 +19,14 @@ class Product_model extends CI_Model {
 		$result			= $query->num_rows();
 		return $result;
 	}
+
+	public function getByName($name)
+	{
+		$this->db->where("name", $name);
+		$query			= $this->db->get('product');
+		$result			= $query->row();
+		return $result;
+	}
 }
 
 ?>

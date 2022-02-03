@@ -41,6 +41,15 @@ class Products extends CI_Controller {
 		}
 	}
 
+	public function Item($EncodedProductName)
+	{
+		echo base64_decode($EncodedProductName);
+		// $productName	= urldecode($EncodedProductName);
+		// $this->load->model("Product_model");
+		// $product		= $this->Product_model->getByName($productName);
+		// print_r($product);
+	}
+
 	public function GetItemsByBrand()
 	{
 		// Get page and brand id from the function (sent using get method)

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2022 at 04:50 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.31
+-- Generation Time: Feb 03, 2022 at 02:42 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -345,7 +345,69 @@ INSERT INTO `product` (`id`, `name`, `alias`, `description`, `created_at`, `is_d
 (373, 'Kabel NYY Supreme', '', 'Kabel NYY Supreme merupakan kabel tunggal dilapisi dengan PVC (hitam) dengan core lebih dari 1. Kabel NYM Supreme telah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 7, 7),
 (374, 'Kabel NFA2X Supreme', '', 'Kabel NFA2X atau lebih dikenal dengan kabel udara merupakan kabel aluminimum yang diperuntukan sebaga kabel di udara. Kabel NFA2X Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-01', 0, 7, 7),
 (375, 'Kabel NYA Supreme', '', 'Kabel NYA merupakan kabel tunggal yang tidak dilapisi oleh tambahan PVC luar. Kabel NYA Supreme tersedia dalam warna hitam, merah, biru, dan kuning-hijau. Kabel NYA Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 7, 7),
-(376, 'Kabel NYAF Supreme', '', 'Kabel NYAF merupakan kabel serabut yang tidak dilapisi oleh tambahan PVC luar. Kabel NYAF Supreme tersedia dalam warna hitam, merah, biru, dan kuning-hijau. Kabel NYAF Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 7, 7);
+(376, 'Kabel NYAF Supreme', '', 'Kabel NYAF merupakan kabel serabut yang tidak dilapisi oleh tambahan PVC luar. Kabel NYAF Supreme tersedia dalam warna hitam, merah, biru, dan kuning-hijau. Kabel NYAF Supreme sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 7, 7),
+(377, 'WABJ5011-N', '', 'Acrosea Series 1-Way 1-Device 1-Gang 10AX 250V', '2022-02-01', 0, 6, 1),
+(378, 'WABJ5021-N', '', 'Acrosea Series 1-Way 2-Device 1-Gang 10AX 250V', '2022-02-02', 0, 6, 1),
+(379, 'WABJ5031-N', '', 'Acrosea Series 1-Way 3-Device 1-Gang 10AX 250V', '2022-02-02', 0, 6, 1),
+(380, 'WABJ5012-N', '', 'Acrosea Series 2-Way 1-Device 1-Gang 10AX 250V', '2022-02-01', 0, 6, 1),
+(381, 'WABJ5022-N', '', 'Acrosea Series 2-Way 2-Device 1-Gang 10AX 250V', '2022-02-02', 0, 6, 1),
+(382, 'WABJ5032-N', '', 'Acrosea Series 2-Way 3-Device 1-Gang 10AX 250V', '2022-02-02', 0, 6, 1),
+(383, 'WABJ5303-N', '', 'Acrosea Series DP 20A dengan indikator', '2022-02-02', 0, 6, 1),
+(384, 'WABJ5511-N', '', 'Acrosea Series Push button bell symbol 1-gang 10A', '2022-02-02', 0, 6, 1),
+(385, 'WABJ1610-N', '', 'Acrosea Series stop kontak schuko', '2022-02-02', 0, 6, 1),
+(386, 'WABJ1211-N', '', 'Acrosea Series stop kontak AC 13A dengan saklar', '2022-02-02', 0, 6, 1),
+(387, 'WABJ3010-N', '', 'Acrosea Series Modul TV tipe DIN', '2022-02-02', 0, 6, 1),
+(388, 'WABJ3118-N', '', 'Acrosea Series Modul Telepon 6P 4C', '2022-02-02', 0, 6, 1),
+(389, 'WABJ3217-N', '', 'Acrosea Series Modul Data (CAT6)', '2022-02-02', 0, 6, 1),
+(390, 'WABJ8010-N', '', 'Acrosea Series Plat Penutup', '2022-02-02', 0, 6, 1),
+(439, 'WEJ5541', '', 'Wide Series sakelar lebar 1 arah', '2022-02-01', 0, 6, 1),
+(440, 'WEJ5581', '', 'Wide Series sakelar lebar 1 arah dengan indikator', '2022-02-01', 0, 6, 1),
+(441, 'WEJ5542', '', 'Wide Series sakelar lebar 2 arah', '2022-02-01', 0, 6, 1),
+(442, 'WEJ5582', '', 'Wide Series sakelar lebar 2 arah dengan indikator', '2022-02-01', 0, 6, 1),
+(443, 'WEJ5531', '', 'Wide Series sakelar 1 arah', '2022-02-01', 0, 6, 1),
+(444, 'WEJ5571', '', 'Wide Series sakelar 1 arah dengan indikator', '2022-02-01', 0, 6, 1),
+(445, 'WEJ5532', '', 'Wide Series sakelar 2 arah', '2022-02-01', 0, 6, 1),
+(446, 'WEJ5572', '', 'Wide Series sakelar 2 arah dengan indikator', '2022-02-01', 0, 6, 1),
+(447, 'WEJ7823', '', 'Wide Series frame 3 gang', '2022-02-01', 0, 6, 1),
+(448, 'WEJ30029', '', 'Wide Series inside cover untuk WEJ7823', '2022-02-01', 0, 6, 1),
+(449, 'WEJ1121-7', '', 'Wide Series Stop kontak schuko dengan grounding untuk WEJ7823', '2022-02-01', 0, 6, 1),
+(450, 'WEJ78019', '', 'Wide Series frame 1 gang 1 device', '2022-02-01', 0, 6, 1),
+(451, 'WEJ78029', '', 'Wide Series frame 1 gang 2 device', '2022-02-01', 0, 6, 1),
+(452, 'WEJ78049', '', 'Wide Series frame 2 gang 4 device', '2022-02-01', 0, 6, 1),
+(453, 'WEJP11222-7', '', 'Wide Series stop kontak schuko dengan grounding ganda', '2022-02-01', 0, 6, 1),
+(454, 'WEJP11322-7', '', 'Wide Series stop kontak schuko tanpa grounding ganda', '2022-02-01', 0, 6, 1),
+(455, 'WEJP11212-7', '', 'Wide Series stop kontak schuko dengan grounding dan frame 2 gang', '2022-02-01', 0, 6, 1),
+(456, 'WEJP11312-7', '', 'Wide Series stop kontak schuko tanpa  grounding dan frame 2 gang', '2022-02-01', 0, 6, 1),
+(457, 'WEJP1121-7', '', 'Wide Series stop kontak schuko dengan grounding', '2022-02-01', 0, 6, 1),
+(458, 'WEJP1131-7', '', 'Wide Series stop kontak schuko tanpa  grounding', '2022-02-01', 0, 6, 1),
+(459, 'WEJ89911', '', 'Wide Series cover frame waterproof', '2022-02-01', 0, 6, 1),
+(460, 'WEJ10919', '', 'Wide Series stop kontak universal', '2022-02-01', 0, 6, 1),
+(461, 'WEJ10919H', '', 'Wide Series stop kontak universal hitam', '2022-02-01', 0, 6, 1),
+(462, 'WEJ57518', '', 'Wide Series 1 gang dimmer 800W', '2022-02-01', 0, 6, 1),
+(463, 'WEJ57518H', '', 'Wide Series 1 gang dimmer 800W hitam', '2022-02-01', 0, 6, 1),
+(464, 'WEJ57515', '', 'Wide Series 1 gang dimmer 500W', '2022-02-01', 0, 6, 1),
+(465, 'WEJ57515H', '', 'Wide Series 1 gang dimmer 500W hitam', '2022-02-01', 0, 6, 1),
+(466, 'WEJ5401-7', '', 'Wide Series tombol tekan', '2022-02-01', 0, 6, 1),
+(467, 'WEJ5401H-7', '', 'Wide Series tombol tekan hitam', '2022-02-01', 0, 6, 1),
+(468, 'WEJ2164', '', 'Wide Series modul telepon (6P 4C)', '2022-02-01', 0, 6, 1),
+(469, 'WEJ2164H', '', 'Wide Series modul telepon (6P 4C) hitam', '2022-02-01', 0, 6, 1),
+(470, 'WEJ2166', '', 'Wide Series modul telepon (6P 6C)', '2022-02-01', 0, 6, 1),
+(471, 'WEJ2166H', '', 'Wide Series modul telepon (6P 6C) hitam', '2022-02-01', 0, 6, 1),
+(472, 'WEJ2488', '', 'Wide Series modul data CAT5E (8P 8C)', '2022-02-01', 0, 6, 1),
+(473, 'WEJ2488H', '', 'Wide Series modul data CAT5E (8P 8C) hitam', '2022-02-01', 0, 6, 1),
+(474, 'WEJ24886', '', 'Wide Series modul data CAT6 (8P 8C)', '2022-02-01', 0, 6, 1),
+(475, 'WEJ24886H', '', 'Wide Series modul data CAT6 (8P 8C) hitam', '2022-02-01', 0, 6, 1),
+(476, 'WEJ2501', '', 'Wide Series modul TV', '2022-02-01', 0, 6, 1),
+(477, 'WEJ2501H', '', 'Wide Series modul TV hitam', '2022-02-01', 0, 6, 1),
+(478, 'WEJ3020', '', 'Wide Series plat penutup', '2022-02-01', 0, 6, 1),
+(479, 'WEJ3020H', '', 'Wide Series plat penutup hitam', '2022-02-01', 0, 6, 1),
+(480, 'WNJ9986', '', 'Wide Series condensor untuk saklear berindikator', '2022-02-01', 0, 6, 1),
+(481, 'WEF1172W', '', 'Wide Series USB 2 lubang', '2022-02-01', 0, 6, 1),
+(482, 'WEF1172H', '', 'Wide Series USB 2 lubang hitam', '2022-02-01', 0, 6, 1),
+(483, 'WEJ9111W', '', 'Wide Series steker stop kontak AC', '2022-02-01', 0, 6, 1),
+(484, 'WBJ1214W', '', 'Wide Series stop kontak AC', '2022-02-01', 0, 6, 1),
+(485, 'WBJ1214W-3K', '', 'Wide Series stop kontak AC dengan saklear dan outbow', '2022-02-01', 0, 6, 1),
+(486, 'WBJ6010W', '', 'Wide Series outbow doost untuk stop kontak AC', '2022-02-01', 0, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -365,7 +427,6 @@ CREATE TABLE `type` (
 INSERT INTO `type` (`id`, `name`) VALUES
 (1, 'Saklar'),
 (2, 'Lampu'),
-(3, 'Lampu Hias'),
 (4, 'Komponen'),
 (5, 'Kipas Angin'),
 (6, 'PVC'),
@@ -409,7 +470,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=377;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=487;
 
 --
 -- AUTO_INCREMENT for table `type`

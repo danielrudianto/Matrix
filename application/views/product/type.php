@@ -23,6 +23,19 @@
 <section>
 	<div class='container mt-5'>
 		<div class='row' id='products'>
+			<div class='col-12'>
+				<div class='input-group input-group-lg mb-5'>
+					<input 
+						type='text' 
+						class='form-control' 
+						style='font-size:1.6rem'
+						placeholder="Cari produk <?= $brand->name ?>">
+					<button 
+						class="btn btn-outline-secondary px-5" 
+						type="button"
+						style='font-size:1.6rem'>Cari</button>
+				</div>
+			</div>
 			<?php foreach($items as $item){ ?>
 				<div class='col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch'>
 					<div class='card w-100 mb-3'>
@@ -37,9 +50,9 @@
 							<p class='paragraph'><?= $item->description ?></p>
 							<br>
 							<a 
-								href="<?= site_url('Products/Detail/') . rawurlencode($item->name) ?>" 
+								href="<?= site_url('Products/Item/') . base64_encode($item->name) ?>" 
 								class="btn btn-outline-dark btn-lg btn-block px-5 py-1">
-									<h3 class='mb-0'>Telusuri</h3>
+									<h3 class='mb-0'>Pelajari</h3>
 							</a>
 						</div>
 					</div>
@@ -124,7 +137,7 @@
 							<p class='paragraph'>${item.description}</p>
 							<br>
 							<a 
-								href="<?= site_url('Products/Detail/') ?>${encodeURIComponent(item.name)}" 
+								href="<?= site_url('Products/Item/') ?>${encodeURIComponent(item.name)}" 
 								class="btn btn-outline-dark btn-lg btn-block px-5 py-1">
 									<h3 class='mb-0'>Telusuri</h3>
 							</a>
