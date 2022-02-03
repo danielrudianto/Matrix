@@ -211,11 +211,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class='row'>
         <div class='col-12'>
           <h2 class="section-heading color-black">Terpercaya dan Terlengkap</h2>
-          <p class='h2 text-center'>Toko Matrix telah dipercaya lebih dari 10 tahun dan telah melayani lebih dari 1.000 pengguna selama berkarier. Berkomitmen untuk menyediakan hanya dan hanya produk dan pelayanan terbaik untuk anda, kami terus mengembangkan sistem pelayanan serta kelengkapan produk kami.</p>
+          <p class='h2 text-center lh-lg'>Toko Matrix telah dipercaya lebih dari 10 tahun dan telah melayani lebih dari 1.000 pengguna selama berkarier. Berkomitmen untuk menyediakan hanya dan hanya produk dan pelayanan terbaik untuk anda, kami terus mengembangkan sistem pelayanan serta kelengkapan produk kami.</p>
           <br>
 
           <p class='h2 text-center'>Telusuri produk kami saat ini di <a href='<?= site_url('Products') ?>'>Product Catalogue</a> kami.</p>
-          <br>
+          <br><br><br>
           <div class='text-center'>
             <button class='button'>Download Flyer</button>
           </div>
@@ -260,6 +260,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
               <div class="footer__info--content">
                 <p class="paragraph dark">Toko Matrix merupakan toko elektrikal berlokasi di Kota Mataram, Lombok. Visi kami adalah untuk menyediakan kebutuhan elektrikal bermutu tinggi untuk anda.</p>
+                <p class="paragraph dark">Suka dengan apa yang anda lihat? Kontak kami untuk <a href='https://xunny.id' rel='dofollow'>membuat website</a> serupa.</p>
               </div>
             </div>
           </div>
@@ -289,11 +290,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="footer__copy">
-            <h6>&copy; <a href='https://xunny.id' rel='dofollow' target='_blank'>Xunny.id</a></h6>
           </div>
         </div>
       </div>

@@ -22,9 +22,30 @@ class Product_model extends CI_Model {
 
 	public function getByName($name)
 	{
-		$this->db->where("name", $name);
-		$query			= $this->db->get('product');
+		$this->db->select('product.*, brand.name AS brandName, type.name AS typeName');
+		$this->db->from('product');
+		$this->db->join('brand', 'product.brand_id = brand.id');
+		$this->db->join('type', 'product.type_id = type.id');
+		$this->db->where("product.name", $name);
+		$query			= $this->db->get();
 		$result			= $query->row();
+		return $result;
+	}
+
+	public function getRecommendation($product)
+	{
+		// Product object => Array of Product Objects;
+		$this->db->select('product.*, brand.name AS brandName, type.name AS typeName');
+		$this->db->from('product');
+		$this->db->join('brand', 'product.brand_id = brand.id');
+		$this->db->join('type', 'product.type_id = type.id');
+		$this->db->where('product.id !=', $product->id);
+		$this->db->where("product.type_id", $product->type_id);
+		$this->db->order_by('RAND()');
+		$this->db->limit(4);
+		
+		$query			= $this->db->get();
+		$result			= $query->result();
 		return $result;
 	}
 }

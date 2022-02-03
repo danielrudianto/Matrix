@@ -113,7 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="card-body p-5 text-center">
 								<h3 class="h2 card-title"><?= $type->name ?></h3>
 								<br>
-								<a href="#" class="btn btn-outline-dark btn-lg btn-block px-5 py-1"><h3 class='mb-0'>Telusuri</h3></a>
+								<a href="<?= site_url('Products/Types/') . rawurlencode($type->name) ?>" class="btn btn-outline-dark btn-lg btn-block px-5 py-1"><h3 class='mb-0'>Telusuri</h3></a>
 							</div>
 						</div>
 					</div>

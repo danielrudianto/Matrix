@@ -43,11 +43,41 @@ class Products extends CI_Controller {
 
 	public function Item($EncodedProductName)
 	{
-		echo base64_decode($EncodedProductName);
-		// $productName	= urldecode($EncodedProductName);
-		// $this->load->model("Product_model");
-		// $product		= $this->Product_model->getByName($productName);
-		// print_r($product);
+		$productName	= urldecode($EncodedProductName);
+		$this->load->model("Product_model");
+
+		$product				= $this->Product_model->getByName($productName);
+		if($product == NULL)
+		{
+			$this->load->model("Brand_model");
+			$data['brands']			= $this->Brand_model->getTop();
+			$data['title']			= "Tipe tidak ditemukan";
+
+			$this->load->view('product/ProductHeader', $data);
+			$this->load->view('product/emptyProduct', $data);
+			$this->load->view('product/ProductFooter');
+		} else {
+			$data['product']		= $product;
+			$data['otherProducts']	= $this->Product_model->getRecommendation($product);
+			
+			$this->load->view('product/detailProduct', $data);
+		}
+	}
+
+	public function Types($EncodedTypeName)
+	{
+		$typeName			= urldecode($EncodedTypeName);
+		$this->load->model("Type_model");
+		$type			= $this->Type_model->getByName($typeName);
+
+		if($type == NULL)
+		{
+
+		} else {
+			$data['type']			= $type;
+			
+			$this->load->view('product/detailType', $data);
+		}
 	}
 
 	public function GetItemsByBrand()

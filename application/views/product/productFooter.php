@@ -9,6 +9,7 @@
               </div>
               <div class="footer__info--content">
                 <p class="paragraph dark">Toko Matrix merupakan toko elektrikal berlokasi di Kota Mataram, Lombok. Visi kami adalah untuk menyediakan kebutuhan elektrikal bermutu tinggi untuk anda.</p>
+                <p class="paragraph dark">Suka dengan apa yang anda lihat? Kontak kami untuk <a href='https://xunny.id' rel='dofollow'>membuat website</a> serupa.</p>
               </div>
             </div>
           </div>
@@ -38,11 +39,6 @@
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="footer__copy">
-            <h6>&copy; <a href='https://xunny.id' rel='dofollow' target='_blank'>Xunny.id</a></h6>
           </div>
         </div>
       </div>

@@ -5,12 +5,12 @@
 				<div class='col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12 text-center'>
 					<img 
 						src='<?= base_url('assets/images/brands/') . $brand->id . '.png' ?>' 
-						alt='Not found illustration' 
-						title="Not found illustration" 
+						alt='<?= $brand->name ?> image' 
+						title="<?= $brand->name ?> image" 
 						class='w-100'>
 				</div>
 				<div class='col-xl-9 col-lg-8 col-md-6 col-sm-10 col-12'>
-					<h1><?= $brand->name ?></h1>
+					<h1 style='font-size:4rem;font-weight:bold'><?= $brand->name ?></h1>
 					<p class='paragraph'><?= $brand->description ?></p>
 					<a 
 						class='button'
@@ -50,7 +50,7 @@
 							<p class='paragraph'><?= $item->description ?></p>
 							<br>
 							<a 
-								href="<?= site_url('Products/Item/') . base64_encode($item->name) ?>" 
+								href="<?= site_url('Products/Item/') . rawurlencode($item->name) ?>" 
 								class="btn btn-outline-dark btn-lg btn-block px-5 py-1">
 									<h3 class='mb-0'>Pelajari</h3>
 							</a>
@@ -149,6 +149,8 @@
 			complete:function(){
 				$('#loader').hide();
 				$('#products').fadeIn(150);
+
+				$(window).scrollTop($('.hero').innerHeight);
 			}
 		})
 	}
