@@ -2,6 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Product_model extends CI_Model {
+	public function getAll(){
+		$this->db->where('is_delete', 0);
+		$query			= $this->db->get('product');
+		$result			= $query->result();
+		return $result;
+	}
+	
 	public function getItemsByBrand($brandId, $offset, $limit)
 	{
 		$this->db->where("brand_id", $brandId);
@@ -46,6 +53,72 @@ class Product_model extends CI_Model {
 		
 		$query			= $this->db->get();
 		$result			= $query->result();
+		return $result;
+	}
+
+	public function searchByKeywordBrand($brandId, $keywordArray, $offset = 0, $limit = 12)
+	{
+		$sqlString		= "SELECT product.* FROM product";
+		$sqlString			.= " JOIN brand ON product.brand_id = brand.id";
+		$sqlString			.= " JOIN type ON product.type_id = type.id";
+
+		if($brandId == 0){
+			$sqlString		.= " WHERE (";
+		} else {
+			$sqlString		.= " WHERE brand_id = $brandId AND (";
+		}
+		
+		
+		foreach($keywordArray as $index => $keyword)
+		{
+			if($index == 0){
+				$sqlString .= "product.name LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			} else {
+				$sqlString .= " OR product.name LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			}
+
+			$sqlString .= " OR product.alias LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			$sqlString .= " OR product.description LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			$sqlString	.= "OR brand.name LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			$sqlString	.= "OR type.name LIKE '%" . $this->db->escape_str($keyword) . "%'";
+		}
+
+		$sqlString .= ") ORDER BY product.name ASC LIMIT $limit OFFSET $offset";
+		$query			= $this->db->query($sqlString);
+		$result			= $query->result();
+		return $result;
+	}
+
+	public function countByKeywordBrand($brandId, $keywordArray)
+	{
+		$sqlString		= "SELECT product.* FROM product";
+
+		$sqlString			.= " JOIN brand ON product.brand_id = brand.id";
+		$sqlString			.= " JOIN type ON product.type_id = type.id";
+
+		if($brandId == 0){
+			$sqlString		.= " WHERE (";
+		} else {
+			$sqlString		.= " WHERE brand_id = $brandId AND (";
+		}
+
+		foreach($keywordArray as $index => $keyword)
+		{
+			if($index == 0){
+				$sqlString .= "product.name LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			} else {
+				$sqlString .= " OR product.name LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			}
+
+			$sqlString .= " OR product.alias LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			$sqlString .= " OR product.description LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			$sqlString	.= "OR brand.name LIKE '%" . $this->db->escape_str($keyword) . "%'";
+			$sqlString	.= "OR type.name LIKE '%" . $this->db->escape_str($keyword) . "%'";
+		}
+		$sqlString .= ")";
+
+		$query			= $this->db->query($sqlString);
+		$result			= $query->num_rows();
 		return $result;
 	}
 }

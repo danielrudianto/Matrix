@@ -72,10 +72,13 @@ class Products extends CI_Controller {
 
 		if($type == NULL)
 		{
-
+			$data['types']		= $this->Type_model->getTypes();
+			$this->load->view('product/emptyDetailType', $data);
 		} else {
 			$data['type']			= $type;
-			
+
+			$this->load->model("Brand_model");
+			$data['brands']			= $this->Brand_model->getByType($type->id);
 			$this->load->view('product/detailType', $data);
 		}
 	}
@@ -92,9 +95,77 @@ class Products extends CI_Controller {
 		// Page 2 meaning that the offset = (2 - 1) * 12 = 12
 		$this->load->model("Product_model");
 		$result		= $this->Product_model->getItemsByBrand($brand, ($page - 1) * 12, 12);
+		// if(!$result){
+		// 	header("HTTP/1.1 500 Internal Server Error");
+		// } else {
+			// Add JSON header
+			header('Content-Type: application/json; charset=utf-8');
+			echo json_encode($result);
+		// }
+	}
 
-		// Add JSON header
+	public function Search()
+	{
+		$keyword		= $this->input->get("keyword");
+		$brandName		= rawurldecode($this->input->get("brand"));
+		
+		$this->load->model("Brand_model");
+		$brand			= $this->Brand_model->getByName($brandName);
+		$brands			= $this->Brand_model->getShownBrands();
+
+		$data['keyword']		= $keyword;
+		$data['brands']			= $brands;
+
+		if($brandName == "All"){
+			$data['selectedBrand']	= (object) array(
+				"id" => 0,
+			);
+			$selectedBrandId		= 0;
+		} else if($brand == NULL)
+		{
+			$data['selectedBrand']	= $this->Brand_model->getRandom();
+			$selectedBrandId		= $data['selectedBrand']->id;
+		} else {
+			$data['selectedBrand']	= $brand;
+			$selectedBrandId		= $brand->id;
+		}
+
+		$keywordArray		= explode(" ", $keyword);
+		$this->load->model("Product_model");
+
+		$data['search']['products']		= $this->Product_model->searchByKeywordBrand($selectedBrandId, $keywordArray);
+		$data['search']['pages']		= max(ceil($this->Product_model->countByKeywordBrand($selectedBrandId, $keywordArray)/12), 1);
+
+
+		$this->load->view('product/search', $data);
+	}
+
+	public function searchByKeywordBrand()
+	{
+		$brandName			= $this->input->get('brand');
+		$this->load->model("Brand_model");
+		$brand				= $this->Brand_model->getByName(rawurldecode($brandName));
+
+		$keyword			= rawurldecode($this->input->get('keyword'));
+		$page				= $this->input->get('page');
+		$offset				= ($page - 1) * 12;
+		$limit				= 12;
+
+		$keywordArray		= explode(" ", $keyword);
+		$this->load->model("Product_model");
+
+		if($brandName == "All"){
+			$data['products']		= $this->Product_model->searchByKeywordBrand(0, $keywordArray, $offset, $limit);
+			$data['pages']			= max(ceil($this->Product_model->countByKeywordBrand(0, $keywordArray)/12), 1);
+		} else if($brand != NULL) {
+			$data['products']		= $this->Product_model->searchByKeywordBrand($brand->id, $keywordArray, $offset, $limit);
+			$data['pages']			= max(ceil($this->Product_model->countByKeywordBrand($brand->id, $keywordArray)/12), 1);
+		} else {	
+			$data['products']		= array();
+			$data['pages']			= 1;
+		}
+
 		header('Content-Type: application/json; charset=utf-8');
-		echo json_encode($result);
+		echo json_encode($data);
 	}
 }

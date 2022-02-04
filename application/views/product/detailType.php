@@ -23,8 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="<?= base_url('assets/js/ytdefer.min.js') ?>"></script>
 	<script src="<?= base_url("assets/js/script.js") ?>"></script>
 
-	<title>Toko Matrix | Product | <?= $product->name ?>></title>
-	<meta name='description' content='<?= $product->description ?>'>
+	<title>Toko Matrix | Type | <?= $type->name ?></title>
+	<meta name='description' content='Toko Matrix merupakan salah satu toko elektrikal terbesar di kota Mataram, Lombok. Salah satu produk unggulan kami adalah <?= $type->name ?>.'>
+	<meta name='keywords' content='toko matrix, matrix, lombok, elektrikal, <?= $type->name ?>'>
 	<link rel='canonical' href='<?= current_url(); ?>'>
 	<meta name='author' content='Xunny.id'>
 	<meta name='publisher' content='Xunny.id'>
@@ -73,49 +74,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </header>
 	<main>
 		<section class='hero'>
-			<div class='hero__wrapper' style='background-color:white'>
+			<div class='hero__wrapper'>
 				<div class='container'>
 					<div class='row'>
 						<div class='col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12 text-center'>
 							<img 
-								src='<?= base_url('assets/images/products/') . $product->id . '.png' ?>' 
-								alt='<?= $product->name ?> image' 
-								title="<?= $product->name ?> image" 
+								src='<?= base_url('assets/images/types/') . $type->id . '.png' ?>' 
+								alt='<?= $type->name ?> image' 
+								title="<?= $type->name ?> image" 
 								class='w-100'>
 						</div>
 						<div class='col-xl-9 col-lg-8 col-md-6 col-sm-10 col-12'>
-							<h1 style='font-size:4rem;font-weight:bold' class='text-md-start text-center'><?= $product->name ?></h1>
-							<p class='paragraph my-0'><strong><?= $product->alias ?></strong></p>
-							<p class='paragraph mt-0' >
-								<a class='text-dark decoration-none' href='<?= site_url('Products/Brand/') . rawurlencode($product->brandName) ?>'><strong><?= $product->brandName ?></strong></a> / <a  class='text-dark decoration-none' href='<?= site_url('Products/Type/') . rawurlencode($product->typeName) ?>'><?= $product->typeName ?></a></p>
-							<p class='paragraph'><?= $product->description ?></p>
+							<h1 style='font-size:4rem;font-weight:bold' class='text-md-start text-center'><?= $type->name ?></h1>
+							<br><br>
 							<a 
 								class='button'
-								href='<?= site_url("Products") ?>'>Kembali</a>
+								href='<?= site_url('Products') ?>'>Kembali</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section class='growth'>
+		<section class='growth mt-5'>
 			<div class='container'>
-				<div class='row'>
-					<?php foreach($otherProducts as $otherProduct){ ?>
-						<div class='col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-stretch mt-0'>
+				<div class='row justify-content-center'>
+					<div class='col-12'>
+						<h2 style='font-size:3rem;' class='section-heading text-center'>Merek yang menyediakan tipe ini</h2>
+					</div>
+					<?php foreach($brands as $brand){ ?>
+						<div class='col-xl-4 col-lg-6 col-md-6 col-sm-10 col-12 d-flex align-items-stretch mt-0'>
 							<div class='card w-100 mb-3'>
 								<img 
 									class="card-img-top w-100" 
-									src="<?= base_url('assets/images/products/') . $otherProduct->id ?>.png" 
-									alt="<?= $otherProduct->name ?>" 
-									title='<?= $otherProduct->name ?> image'>
+									src="<?= base_url('assets/images/brands/') . $brand->id ?>.png" 
+									alt="<?= $brand->name ?>" 
+									title='<?= $brand->name ?> image'>
 								<div class="card-body p-5 text-center">
-									<h2 class="h3 card-title"><?= $otherProduct->name ?></h3>
-									<p class='h4 card-subtitle mb-0'><?= $otherProduct->alias ?></p>
-									<p class='paragraph mb-5'><?= $otherProduct-> brandName ?></p>
-									<p class='paragraph'><?= $otherProduct->description ?></p>
+									<h2 class="h3 card-title"><?= $brand->name ?></h3>
+									<p class='paragraph'><?= $brand->description ?></p>
 									<br>
 									<a 
-										href="<?= site_url('Products/Item/') . rawurlencode($otherProduct->name) ?>" 
+										href="<?= site_url('Products/Brand/') . rawurlencode($brand->name) ?>" 
 										class="btn btn-outline-dark btn-lg btn-block px-5 py-1">
 											<h3 class='mb-0'>Pelajari</h3>
 									</a>
@@ -154,11 +153,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="download-buttons">
 					<h5>Hubungi</h5>
-					<a href="#" class="google-play">
-					<i class="fab fa-google-play"></i>
-					<div class="button-content">
-						<h6>Whatsapp</h6>
-					</div>
+					<a href="https://wa.me/628175705400" class="google-play">
+						<i class="fab fa-google-play"></i>
+						<div class="button-content">
+							<h6>Whatsapp</h6>
+						</div>
 					</a>
 					<a href="https://goo.gl/maps/YyDtPUNPhwhp6VB99" target='blank' class="apple-store">
 					<i class="fab fa-apple"></i>

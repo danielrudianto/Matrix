@@ -48,9 +48,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 	</style>
 </head>
-<!-- <div class="preloader">
+<div class="preloader">
   <img src="<?= base_url('assets/images/loading-logo.png') ?>" alt="Logo Toko Matrix" title='Logo Toko Matrix'>
-</div> -->
+</div>
 <body>
 	<header class="header header-1">
         <div class="container">

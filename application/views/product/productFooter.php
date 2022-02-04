@@ -25,7 +25,7 @@
               </div>
               <div class="download-buttons">
                 <h5>Hubungi</h5>
-                <a href="#" class="google-play">
+                <a href="https://wa.me/628175705400" class="google-play">
                   <i class="fab fa-google-play"></i>
                   <div class="button-content">
                     <h6>Whatsapp</h6>

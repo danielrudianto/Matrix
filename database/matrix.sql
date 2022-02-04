@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2022 at 02:42 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.4.20
+-- Generation Time: Feb 04, 2022 at 08:05 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,8 @@ INSERT INTO `brand` (`id`, `name`, `description`, `is_shown`) VALUES
 (4, 'Schneider Electric', 'Schneider Electric, perusahaan manufaktur internasional dengan produk komponen elektrikal asal Perancis, Eropa yang telah berdiri sejak 1836 menawarkan beragam produk elektrikal dengan kualitas yang sudah dijamin.', 1),
 (5, 'Boss', 'Boss merupakan merek untuk keperluan PVC elektrikal seperti socket, pipa conduit, dan flexible asal Australia. Dengan pengalaman sejak 1980, Boss telah berkembang menjadi salah satu merek PVC elektrikal yang mendominasi pasar di Indonesia.', 1),
 (6, 'Panasonic', 'Panasonic merupakan merek elektronik internasional yang mendominasi pasar perlengkapan rumah tangga dan konsumen. Toko Matrix menyediakan perlengkapan saklar, stopkontak, kipas angin, serta exhaust fan merek Pannasonic.', 1),
-(7, 'Supreme Cable', 'Supreme Cable merupakan salah satu manufaktur kabel listrik tertua di Indonesia. Dengan pengalaman lebih dari 50 tahun, kabel Supreme memiliki spesialisasi dalam pembuatan kabel listrik tegangan rendah (low voltage), tegangan menengah (medium voltage), dan tegangan tinggi (high voltage) untuk banyak industri lain.', 1);
+(7, 'Supreme Cable', 'Supreme Cable merupakan salah satu manufaktur kabel listrik tertua di Indonesia. Dengan pengalaman lebih dari 50 tahun, kabel Supreme memiliki spesialisasi dalam pembuatan kabel listrik tegangan rendah (low voltage), tegangan menengah (medium voltage), dan tegangan tinggi (high voltage) untuk banyak industri lain.', 1),
+(8, 'Legrand', 'Legrand adalah grup industri Prancis yang secara historis didirikan di Limoges di Limousin dan salah satu pemimpin dunia dalam produk dan sistem untuk instalasi listrik dan jaringan informasi.', 1);
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,7 @@ INSERT INTO `product` (`id`, `name`, `alias`, `description`, `created_at`, `is_d
 (180, 'E16F', '', 'Two pole switches with indicator lamp 20AX 250V', '2022-02-01', 0, 3, 1),
 (181, 'E16E', '', 'Three pole switches with indicator lamp 16AX 400V', '2022-02-01', 0, 3, 1),
 (182, 'E191', '', 'Dimmer for incandescent lamp with push on push off switch one way 60 - 500W 220V', '2022-02-01', 0, 3, 1),
-(183, 'E191/2W', '', 'Dimmer for incandescent lamp with push on push off switch two way / change over 60 - 500W 220V', '2022-02-01', 0, 3, 1),
+(183, 'E191-2W', '', 'Dimmer for incandescent lamp with push on push off switch two way / change over 60 - 500W 220V', '2022-02-01', 0, 3, 1),
 (184, 'E195', '', 'Motion sensor switch 500W 220V', '2022-02-01', 0, 3, 1),
 (185, 'E196', '', 'Dual USB charging port 5VDC / 2.1A 220V', '2022-02-01', 0, 3, 1),
 (186, 'E171', '', 'Telephone socket outlet (RJ11)', '2022-02-01', 0, 3, 1),
@@ -167,9 +168,9 @@ INSERT INTO `product` (`id`, `name`, `alias`, `description`, `created_at`, `is_d
 (193, 'E181', '', 'Antenna socket outlet for TV and radio single use', '2022-02-01', 0, 3, 1),
 (194, 'E184', '', 'Satellite antenna socket outlet', '2022-02-01', 0, 3, 1),
 (195, 'E160', '', 'Key card holder switch one way 10AX 250V', '2022-02-01', 0, 3, 1),
-(196, 'E160/2W', '', 'Key card holder switch two way / change over 10AX 250V', '2022-02-01', 0, 3, 1),
-(197, 'E163/DND', '', 'Do not disturb switch 10AX 250V', '2022-02-01', 0, 3, 1),
-(198, 'E16LD/DND-MUR', '', 'Do not disturb and make up-up room switch 10AX 250V', '2022-02-01', 0, 3, 1),
+(196, 'E160-2W', '', 'Key card holder switch two way / change over 10AX 250V', '2022-02-01', 0, 3, 1),
+(197, 'E163-DND', '', 'Do not disturb switch 10AX 250V', '2022-02-01', 0, 3, 1),
+(198, 'E16LD-DND-MUR', '', 'Do not disturb and make up-up room switch 10AX 250V', '2022-02-01', 0, 3, 1),
 (199, 'E141', '', 'Do not disturb indicator 230V', '2022-02-01', 0, 3, 1),
 (200, 'E142', '', 'Do not disturb and make-up room indicator 230V', '2022-02-01', 0, 3, 1),
 (201, 'C064', '', 'Stainless steel grindswitch 18 inserts for flush mounting', '2022-02-01', 0, 3, 6),
@@ -323,15 +324,15 @@ INSERT INTO `product` (`id`, `name`, `alias`, `description`, `created_at`, `is_d
 (349, 'XB5AVM4', '', 'Push button Harmony XB5 diameter 22mm IP66 230 - 240VAC merah Schneider', '2022-02-01', 0, 4, 4),
 (350, 'XB5AVM5', '', 'Push button Harmony XB5 diameter 22mm IP66 230 - 240VAC jingga Schneider', '2022-02-01', 0, 4, 4),
 (351, 'XB5AVM6', '', 'Push button Harmony XB5 diameter 22mm IP66 230 - 240VAC biru  Schneider', '2022-02-01', 0, 4, 4),
-(354, 'B240/20/1', '', 'Junction Box 1 way', '2022-02-01', 0, 5, 6),
-(355, 'B240/20/2', '', 'Junction Box 2 way', '2022-02-02', 0, 5, 6),
-(356, 'B240/20/2A', '', 'Junction Box 2 way angle', '2022-02-02', 0, 5, 6),
-(357, 'B240/20/3', '', 'Junction Box 3 way', '2022-02-02', 0, 5, 6),
-(358, 'B240/20/4', '', 'Junction Box 4 way', '2022-02-02', 0, 5, 6),
-(359, 'B247/20', '', '90 degree bend', '2022-02-02', 0, 5, 6),
-(360, 'B242/20', '', 'Joining coupling', '2022-02-02', 0, 5, 6),
+(354, 'B240-20-1', '', 'Junction Box 1 way', '2022-02-01', 0, 5, 6),
+(355, 'B240-20-2', '', 'Junction Box 2 way', '2022-02-02', 0, 5, 6),
+(356, 'B240-20-2A', '', 'Junction Box 2 way angle', '2022-02-02', 0, 5, 6),
+(357, 'B240-20-3', '', 'Junction Box 3 way', '2022-02-02', 0, 5, 6),
+(358, 'B240-20-4', '', 'Junction Box 4 way', '2022-02-02', 0, 5, 6),
+(359, 'B247-20', '', '90 degree bend', '2022-02-02', 0, 5, 6),
+(360, 'B242-20', '', 'Joining coupling', '2022-02-02', 0, 5, 6),
 (361, 'B729C20', '', 'Glands', '2022-02-02', 0, 5, 6),
-(362, 'B261/20', '', 'Saddle', '2022-02-02', 0, 5, 6),
+(362, 'B261-20', '', 'Saddle', '2022-02-02', 0, 5, 6),
 (363, 'Kabel NYYHY Extrana', '', 'Kabel NYYHY merupakan kabel serabut dilapisi oleh PVC (hitam) dengan core lebih dari 1. Kabel NYYHY Extrana sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN', '2022-02-02', 0, 1, 7),
 (364, 'Kabel NYMHY Extrana', '', 'Kabel NYMHY merupakan kabel serabut dilapisi oleh PVC (putih) dengan core lebih dari 1. Kabel NYMHY Extrana sudah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 1, 7),
 (365, 'Kabel NYM Extrana', '', 'Kabel NYM Extrana merupakan kabel tunggal dilapisi dengan PVC (putih) dengan core lebih dari 1. Kabel NYM Extrana telah dilengkapi dengan sertifikasi SNI, LMK, dan SPLN.', '2022-02-02', 0, 1, 7),
@@ -407,7 +408,53 @@ INSERT INTO `product` (`id`, `name`, `alias`, `description`, `created_at`, `is_d
 (483, 'WEJ9111W', '', 'Wide Series steker stop kontak AC', '2022-02-01', 0, 6, 1),
 (484, 'WBJ1214W', '', 'Wide Series stop kontak AC', '2022-02-01', 0, 6, 1),
 (485, 'WBJ1214W-3K', '', 'Wide Series stop kontak AC dengan saklear dan outbow', '2022-02-01', 0, 6, 1),
-(486, 'WBJ6010W', '', 'Wide Series outbow doost untuk stop kontak AC', '2022-02-01', 0, 6, 1);
+(486, 'WBJ6010W', '', 'Wide Series outbow doost untuk stop kontak AC', '2022-02-01', 0, 6, 1),
+(487, 'LED Lilin 4W', '', 'Lampu lilin LED 2.700K (kuning) bening menambah kilau nyaman untuk rumah Anda.', '2022-02-03', 0, 2, 2),
+(488, 'LED Lilin 5.5W', '', 'Lampu lilin LED 2.700K (kuning) bening menambah kilau nyaman untuk rumah Anda.', '2022-02-03', 0, 2, 2),
+(490, '8718696579510', '', 'LED spot 3W (35W) GU5.3 kap Putih hangat, Tidak dapat diredupkan', '2022-02-03', 0, 2, 2),
+(491, '8718696579534', '', 'LED spot 3W (35W) GU5.3 kap Terang Sejuk, Tidak dapat diredupkan', '2022-02-03', 0, 2, 2),
+(492, '8718696579558', '', 'LED spot 5W (50W) GU5.3 kap Putih Hangat, Tidak dapat diredupkan', '2022-02-03', 0, 2, 2),
+(493, '8718696579558', '', 'LED spot 5W (50W) GU5.3 kap Terang Sejuk, Tidak dapat diredupkan', '2022-02-03', 0, 2, 2),
+(494, '8718696574874', 'Dapat diredupkan', 'Lampu bohlam LED 4W (40W) E27 Putih hangat, Dapat diredupkan', '2022-02-03', 0, 2, 2),
+(495, '8718696820605', '', 'Lampu bohlam LED 5W - 50W (50W GLS, 9W CFL) E27 Putih', '2022-02-03', 0, 2, 2),
+(496, '8718696820629', '', 'Lampu bohlam LED 5W - 50W (50W GLS, 9W CFL) E27 Cool Daylight', '2022-02-03', 0, 2, 2),
+(497, '8718696820643', '', 'Lampu bohlam LED 7W - 65W (65W GLS, 12W CFL) E27 Putih', '2022-02-03', 0, 2, 2),
+(498, '8718696820667', '', 'Lampu bohlam LED 7W - 65W (65W GLS, 12W CFL) E27 Cool Daylight', '2022-02-03', 0, 2, 2),
+(499, 'LED bulb 8719514252493', '', 'Lampu bohlam LED 9W - 60W 9W-60W (60W GLS, 15W CFL) E27 Putih', '2022-02-03', 0, 2, 2),
+(500, 'LED bulb 8719514252516', '', 'Lampu bohlam LED 9W - 60W 9W-60W (60W GLS, 15W CFL) E27 Cool Daylight', '2022-02-03', 0, 2, 2),
+(501, 'LED bulb 8719514252530', '', 'Lampu bohlam LED 11W-80W (80W GLS, 20W CFL) E27 Putih', '2022-02-03', 0, 2, 2),
+(502, 'LED bulb 8719514252554', '', 'Lampu bohlam LED 11W-80W (80W GLS, 20W CFL) E27 Cool Daylight', '2022-02-03', 0, 2, 2),
+(503, '656513', '', 'Pipa Conduit PVC -LINK Rigid Conduit 20mm', '2022-02-03', 0, 8, 6),
+(504, '656526', '', 'Kabel PVC / Penarik Kabel', '2022-02-03', 0, 8, 6),
+(505, 'SPS20', '', 'Saddle conduit 20mm', '2022-02-03', 0, 8, 6),
+(506, '617100', '', 'Belanko Series Sakelar 1-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(507, '617101', '', 'Belanko Series Sakelar 1-gang 2-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(508, '617102', '', 'Belanko Series Sakelar 2-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(509, '617103', '', 'Belanko Series Sakelar 2-gang 2-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(510, '617104', '', 'Belanko Series Sakelar 3-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(511, '617105', '', 'Belanko Series Sakelar 3-gang 2-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(512, '617106', '', 'Belanko Series Sakelar 4-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(513, '617107', '', 'Belanko Series Sakelar 4-gang 2-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(514, '617108', '', 'Belanko Series Sakelar 5-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(515, '617110', '', 'Belanko Series Sakelar 6-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(516, '617000', '', 'Belanko Series Sakelar 1-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(517, '617001', '', 'Belanko Series Sakelar 1-gang 2-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(518, '617002', '', 'Belanko Series Sakelar 2-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(519, '617003', '', 'Belanko Series Sakelar 2-gang 2-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(520, '617004', '', 'Belanko Series Sakelar 3-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(521, '617005', '', 'Belanko Series Sakelar 3-gang 2-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(522, '617006', '', 'Belanko Series Sakelar 4-gang 1-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(523, '617007', '', 'Belanko Series Sakelar 4-gang 2-way switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(524, '617009', '', 'Belanko Series Intermediate switch 10AX 250V', '2022-02-03', 0, 8, 1),
+(525, '617020', '', 'Belanko Series Sakelar 1-gang 1-way switch 20AX 250V', '2022-02-03', 0, 8, 1),
+(526, '617021', '', 'Belanko Series Sakelar 1-gang 2-way switch 20AX 250V', '2022-02-03', 0, 8, 1),
+(527, '617022', '', 'Belanko Series Sakelar 2-gang 1-way switch 20AX 250V', '2022-02-03', 0, 8, 1),
+(528, '617023', '', 'Belanko Series Sakelar 2-gang 2-way switch 20AX 250V', '2022-02-03', 0, 8, 1),
+(535, '617121', '', 'Belanko Series single TV socket, female', '2022-02-03', 0, 8, 1),
+(536, '617120', '', 'Belanko Series single TV socket, \"F\" type', '2022-02-03', 0, 8, 1),
+(537, '617123', '', 'Belanko Series double TV socket, female + \"F\" type', '2022-02-03', 0, 8, 1),
+(538, '617097', '', 'Belanko Series RJ11 socket', '2022-02-03', 0, 8, 1),
+(539, '617098', '', 'Belanko Series double RJ11 socket', '2022-02-03', 0, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -464,13 +511,13 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=487;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=540;
 
 --
 -- AUTO_INCREMENT for table `type`

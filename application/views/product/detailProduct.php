@@ -78,20 +78,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class='row'>
 						<div class='col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12 text-center'>
 							<img 
-								src='<?= base_url('assets/images/products/') . $product->id . '.png' ?>' 
+								src='<?= base_url('assets/images/products/') . $product->id . '.webp' ?>' 
 								alt='<?= $product->name ?> image' 
 								title="<?= $product->name ?> image" 
 								class='w-100'>
 						</div>
 						<div class='col-xl-9 col-lg-8 col-md-6 col-sm-10 col-12'>
 							<h1 style='font-size:4rem;font-weight:bold' class='text-md-start text-center'><?= $product->name ?></h1>
-							<p class='paragraph my-0'><strong><?= $product->alias ?></strong></p>
-							<p class='paragraph mt-0' >
+							<p class='paragraph my-0 text-md-start text-center'><strong><?= $product->alias ?></strong></p>
+							<p class='paragraph mt-0 text-md-start text-center'>
 								<a class='text-dark decoration-none' href='<?= site_url('Products/Brand/') . rawurlencode($product->brandName) ?>'><strong><?= $product->brandName ?></strong></a> / <a  class='text-dark decoration-none' href='<?= site_url('Products/Type/') . rawurlencode($product->typeName) ?>'><?= $product->typeName ?></a></p>
-							<p class='paragraph'><?= $product->description ?></p>
-							<a 
+							<p class='paragraph text-md-start text-center'><?= $product->description ?></p>
+							<button 
 								class='button'
-								href='<?= site_url("Products") ?>'>Kembali</a>
+								onclick='history.back()'>Kembali</button>
 						</div>
 					</div>
 				</div>
@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class='card w-100 mb-3'>
 								<img 
 									class="card-img-top w-100" 
-									src="<?= base_url('assets/images/products/') . $otherProduct->id ?>.png" 
+									src="<?= base_url('assets/images/products/') . $otherProduct->id ?>.webp" 
 									alt="<?= $otherProduct->name ?>" 
 									title='<?= $otherProduct->name ?> image'>
 								<div class="card-body p-5 text-center">
@@ -154,11 +154,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="download-buttons">
 					<h5>Hubungi</h5>
-					<a href="#" class="google-play">
+					<a href="https://wa.me/628175705400" class="google-play">
 					<i class="fab fa-google-play"></i>
-					<div class="button-content">
-						<h6>Whatsapp</h6>
-					</div>
+						<div class="button-content">
+							<h6>Whatsapp</h6>
+						</div>
 					</a>
 					<a href="https://goo.gl/maps/YyDtPUNPhwhp6VB99" target='blank' class="apple-store">
 					<i class="fab fa-apple"></i>

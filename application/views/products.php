@@ -52,20 +52,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <p class='paragraph'>Pada aplikasi ini, kami dapat membantu anda untuk memilih produk sesuai kebutuhan anda. Untuk memudahkan anda untuk memiliih produk, kami telah mengklasifikasikan produk - produk andalan kami ke dalam beberapa <em>filter</em> yaitu <strong>merek</strong>, dan <strong>jenis barang</strong>.</p>
               </div>
               <div class='col-lg-4 col-md-6 col-sm-8 col-12 mt-5'>
-                  <div class="input-group mb-3">
-                      <input 
-                          type="text" 
-                          class="form-control p-3" 
-                          placeholder="Cari Produk" 
-                          aria-label="Cari Produk" 
-                          aria-describedby="button-addon2"
-                          style='font-size:1.6rem'>
-                  <button 
-                      class="btn btn-outline-secondary px-5" 
-                      type="button" 
-                      id="button-addon2"
-                      style='font-size:1.6rem'>Cari</button>
-                  </div>
+                  <form action='<?= site_url('Products/Search') ?>' method='get'>
+                    <div class="input-group mb-3">
+                        <input 
+                            required
+                            name='keyword'
+                            id='keyword'
+                            type="text" 
+                            class="form-control p-3" 
+                            placeholder="Cari Produk" 
+                            aria-label="Cari Produk" 
+                            aria-describedby="button-addon2"
+                            style='font-size:1.6rem' />
+                        <input
+                          type='hidden'
+                          value='All'
+                          name='brand'
+                            id='brand' />
+                      <button 
+                          class="btn btn-outline-secondary px-5" 
+                          type="submit" 
+                          id="button-addon2"
+                          style='font-size:1.6rem'>Cari</button>
+                    </div>
+                  </form>
               </div>
           </div>
       </div>
@@ -147,7 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
               <div class="download-buttons">
                 <h5>Hubungi</h5>
-                <a href="#" class="google-play">
+                <a href="https://wa.me/628175705400" class="google-play">
                   <i class="fab fa-google-play"></i>
                   <div class="button-content">
                     <h6>Whatsapp</h6>

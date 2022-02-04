@@ -23,7 +23,7 @@ class Brand_model extends CI_Model {
 			FROM brand
 			WHERE brand.is_shown = 1
 			ORDER BY brand.name ASC
-			LIMIT 5
+			LIMIT 4
 		");
 
 		$result			= $query->result();
@@ -36,6 +36,28 @@ class Brand_model extends CI_Model {
 		$query		= $this->db->get('brand');
 		$result		= $query->row();
 		return $result;		
+	}
+
+	public function getRandom(){
+		$this->db->order_by('RAND()');
+		$query			= $this->db->get('brand');
+		$result			= $query->row();
+		return $result;
+	}
+
+	public function getByType($typeId)
+	{
+		$query		= $this->db->query("
+			SELECT brand.*
+			FROM brand
+			JOIN product ON brand.id = product.brand_id
+			JOIN type ON product.type_id = type.id
+			WHERE type.id = $typeId
+			GROUP BY brand.id
+		");
+
+		$result			= $query->result();
+		return $result;
 	}
 }
 

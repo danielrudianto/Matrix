@@ -216,9 +216,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <p class='h2 text-center'>Telusuri produk kami saat ini di <a href='<?= site_url('Products') ?>'>Product Catalogue</a> kami.</p>
           <br><br><br>
-          <div class='text-center'>
+          <!-- <div class='text-center'>
             <button class='button'>Download Flyer</button>
-          </div>
+          </div> -->
           
         </div>
       </div>
@@ -271,12 +271,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <li>Sitemap</li>
                   <li><a href="<?= site_url() ?>">Beranda</a></li>
                   <li><a href="<?= site_url('Products') ?>">Produk</a></li>
-                  <li><a href="<?= site_url('About') ?>">Tentang</a></li>
                 </ul>
               </div>
               <div class="download-buttons">
                 <h5>Hubungi</h5>
-                <a href="#" class="google-play">
+                <a href="https://wa.me/628175705400" class="google-play">
                   <i class="fab fa-google-play"></i>
                   <div class="button-content">
                     <h6>Whatsapp</h6>
